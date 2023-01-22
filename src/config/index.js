@@ -2,13 +2,13 @@ import dotenv from "dotenv";
 import yargs from "yargs/yargs"
 dotenv.config();
 
-const args = yargs(process.argv.slice(2)).default({port:8000, mode:"FORK"}).alias({p:"port", m:"mode"}).argv;
+const args = yargs(process.argv.slice(2)).default({mode:"FORK"}).alias({m:"mode"}).argv;
 
 const PRODUCTS_FILENAME = "productos";
 const CARTS_FILENAME = "carritos";
 const config = {
   SERVER: {
-    PORT: $PORT,
+    PORT: process.env.PORT,
     MODE: args.mode
   },
   DAO: process.env.DAO,
