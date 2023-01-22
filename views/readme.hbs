@@ -16,7 +16,7 @@
     <p>1. Register a user with:</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/auth/register">https://desafios-47dhkuljx-rafamsl.vercel.app/api/auth/register</a></li>
+    <li>Endpoint: <a href="/api/auth/register">/api/auth/register</a></li>
     <li>Body raw JSON:&nbsp;
     <ul>
     <li>name</li>
@@ -29,7 +29,7 @@
     <p>2. Request your auth token with:</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/auth/register">https://desafios-47dhkuljx-rafamsl.vercel.app/api/auth/login</a></li>
+    <li>Endpoint: <a href="/api/auth/register">/api/auth/login</a></li>
     <li>Body raw JSON:
     <ul>
     <li>email</li>
@@ -41,17 +41,17 @@
     <p>1. Get All Products:</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos</a></li>
+    <li>Endpoint: <a href="/api/productos/">/api/productos</a></li>
     </ul>
     <p>2. Get Product By ID:</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/:id</a></li>
+    <li>Endpoint: <a href="/api/productos/">/api/productos/:id</a></li>
     </ul>
     <p>3. Create Product:</p>
     <ul>
     <li>Method: POST</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos</a></li>
+    <li>Endpoint: <a href="/api/productos/">/api/productos</a></li>
     <li>Body raw JSON
     <ul>
     <li>title -&gt; String</li>
@@ -66,12 +66,12 @@
     <p>4. Delete Product:</p>
     <ul>
     <li>Method: DELETE</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/:id</a></li>
+    <li>Endpoint: <a href="/api/productos/">/api/productos/:id</a></li>
     </ul>
     <p>5. Edit Product:</p>
     <ul>
     <li>Method: PUT</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/:id</a></li>
+    <li>Endpoint: <a href="/api/productos/">/api/productos/:id</a></li>
     <li>Body raw JSON
     <ul>
     <li>title -&gt; String</li>
@@ -88,40 +88,46 @@
     <p>1. Get All Carts</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos</a></li>
+    <li>Endpoint: <a href="/api/carritos">/api/carritos</a></li>
     </ul>
     <p>&nbsp;</p>
     <p>2. Get User Cart</p>
     <ul>
     <li>Method: GET</li>
     <li>Authentication: Bearer token</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos/usercart</a></li>
+    <li>Endpoint: <a href="/api/carritos/usercart">/api/carritos/usercart</a></li>
     </ul>
     <p>3. Get Cart by ID</p>
     <ul>
     <li>Method: GET</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos/:id</a></li>
+    <li>Endpoint: <a href="/api/carritos/:id">/api/carritos/:id</a></li>
     </ul>
     <p>4. Add Cart to User</p>
     <ul>
     <li>Method: POST</li>
     <li>Authentication: Bearer token</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos</a></li>
+    <li>Endpoint: <a href="/api/carritos">/api/carritos</a></li>
     </ul>
     <p>5. Remove Product from Cart</p>
     <ul>
     <li>Method: Delete</li>
     <li>Authentication: Bearer token</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos/usercart/productos/:productId</a></li>
+    <li>Endpoint: <a href="/api/carritos/usercart/productos/:productId">/api/carritos/usercart/productos/:productId</a></li>
     </ul>
     <p>&nbsp;</p>
     <p>6. Delete cart</p>
     <ul>
     <li>Method: Delete</li>
     <li>Authentication: Bearer token</li>
-    <li>Endpoint: <a href="https://desafios-47dhkuljx-rafamsl.vercel.app/api/productos/">https://desafios-47dhkuljx-rafamsl.vercel.app/api/carritos/usercart/</a></li>
+    <li>Endpoint: <a href="/api/carritos/usercart/">/api/carritos/usercart/</a></li>
     </ul>
     <p>&nbsp;</p>
+    <p>7. BUY</p>
+    <ul>
+    <li>Method: POST</li>
+    <li>Authentication: Bearer token</li>
+    <li>Endpoint: <a href="/api/carritos/usercart/buy">/api/carritos/usercart/buy</a></li>
+    </ul>
 </body>
 
 </html>
