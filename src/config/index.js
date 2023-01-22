@@ -8,7 +8,7 @@ const PRODUCTS_FILENAME = "productos";
 const CARTS_FILENAME = "carritos";
 const config = {
   SERVER: {
-    PORT: args.port,
+    PORT: $PORT,
     MODE: args.mode
   },
   DAO: process.env.DAO,
