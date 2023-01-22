@@ -1,0 +1,27 @@
+
+
+SUCCESS PATH NEW USER
+
+1. Registrar un usuario -> OK
+2. Crear un carrito -> Ok
+3. Chequear todos los productos -> Ok 
+4. Agregar un producto al carrito -> Ok
+5. Remover un producto del carrito -> Ok
+6. Chequear productos del carrito -> Ok
+
+SUCCESS PATH EXISTING USER
+1. Request token de user -> OK
+2. Ver su carrito -> Ok
+3. Deletar su carrito -> Ok
+
+ISSUES
+
+1. Registar un usuario/Hacer login con problemas
+    Mal mail
+    Mal password
+
+2. Buscar un producto/carrito/usuario inexistente
+
+3. Agregar productos fuera de stock
+
+4. Deletar un carrito/producto/usuario inexistente

@@ -1,0 +1,20 @@
+{"level":"warn","message":"Route: /readme || Method: GET || Warn: Pagina no existente","timestamp":"21/01/2023 12:46:48"}
+{"level":"warn","message":"Route: /routes || Method: GET || Warn: Pagina no existente","timestamp":"21/01/2023 12:46:50"}
+{"level":"error","message":"Route: /register || Method: register || Error: ReferenceError: CarritoController is not defined","timestamp":"21/01/2023 13:06:25"}
+{"level":"error","message":"Route: /register || Method: register || Error: ReferenceError: carrito_id is not defined","timestamp":"21/01/2023 13:07:11"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 13:12:14"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 13:30:51"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:03:22"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:08"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:25"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:35"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:05:57"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:06:23"}
+{"level":"warn","message":"Route: /alt=%22image%22 || Method: GET || Warn: Pagina no existente","timestamp":"21/01/2023 14:28:13"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 14:55:31"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 15:07:14"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 18:25:18"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 18:25:26"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 18:25:50"}
+{"level":"warn","message":"Route: /failureLogin || Method: failureRegister || Warn: User Login Error","timestamp":"21/01/2023 18:25:57"}
+{"level":"error","message":"Route: Register User || Method: Send email || Error: ReferenceError: MESSAGE_UTILS is not defined","timestamp":"22/01/2023 11:35:33"}

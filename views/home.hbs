@@ -1,0 +1,103 @@
+<div class="container my-5">
+  <div class="jumbotron">
+    <h4> Info del usuario </h4>
+    <p>email: {{ username }}</p>
+    <p>tel: {{ telefono }}</p>
+    <p>dir: {{ direccion }}</p>
+    <p>cumple: {{ nacimiento }}</p>
+    <p>carrito: {{ carrito_id }}</p>
+    <p> running on {{ server }} -- {{ port }}</p>
+    
+    <hr>
+    <h3>Lista de Productos</h3>
+    <div>
+    {{#if products.length}}
+      <table>
+          <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Foto</th>
+              <th>ID</th>
+          </tr>
+          {{#each products}}
+          <tr>
+              <td>{{this.title}}</td>
+              <td>${{this.price}}</td>
+              <td><img width="48" src={{this.thumbnail}} alt="image"></td>
+              <td>{{this._id}}</td>
+
+              
+          </tr>
+          {{/each}}
+      </table>
+    {{else}}
+      <div>
+          No hay productos
+      </div>
+    {{/if}}
+    </div>
+    <hr>
+    <h3>Tu carrito</h3>
+    {{#if carrito_productos.length}}
+      <table>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+            <th>Cantidad</th>
+          </tr>
+          {{#each carrito_productos}}
+          <tr>
+            <td>{{this.title}}</td>
+            <td>${{this.price}}</td>
+            <td><img width="48" src={{this.thumbnail}} alt="image"></td>
+            <td>{{this.stock}}</td>   
+          </tr>
+          {{/each}}
+      </table>
+    {{else}}
+      <div>
+          No hay productos
+      </div>
+    {{/if}}
+    <hr>
+    <h3>Instrucciones para comprar</h3>
+    <div>
+      <div>
+        <h5>Get Auth token: </h5>
+        <p><b>GET</b> /api/auth/login</p>
+        <p>Raw Body JSON:
+        <code>
+          "email": {email},
+          "password: {password}"
+        </code></p>
+        <h5>1. Para agregar un producto al carrito:</h5>
+        <p><b>POST</b> /api/carritos/usercart/productos</p>
+        <p>Include Auth Token</p>
+        <p>Raw Body JSON:
+        <code>
+          "productId": {product_id},
+          "stockRequest: {amount you want}"
+        </code></p>
+      </div>
+      <div>
+        <h5>2. Para remover productos del carrito:</h5>
+        <p><b>DELETE</b> /api/carritos/usercart/productos/:productid</p>
+        <p>Include Auth Token</p>
+      </div>
+      <div>
+        <h5>3. Para vaciar el carrito:</h5>
+        <p><b>DELETE</b> /api/carritos/usercart</p>
+        <p>Include Auth Token</p>
+      </div>
+      <div>
+        <h5>4. Para finalizar compra:</h5>
+        <p><b>POST</b> /api/carritos/usercart/buy</p>
+        <p>Include Auth Token</p>
+      </div>
+    </div>
+    <div class="text-left">
+      <button class="btn btn-danger my-3" onclick="location.href = '/logout'">Logout</button>
+    </div>
+  </div>
+</div>

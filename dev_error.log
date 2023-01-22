@@ -1,0 +1,9 @@
+{"level":"error","message":"Route: /register || Method: register || Error: ReferenceError: CarritoController is not defined","timestamp":"21/01/2023 13:06:25"}
+{"level":"error","message":"Route: /register || Method: register || Error: ReferenceError: carrito_id is not defined","timestamp":"21/01/2023 13:07:11"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:03:22"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:08"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:25"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:04:35"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:05:57"}
+{"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:06:23"}
+{"level":"error","message":"Route: Register User || Method: Send email || Error: ReferenceError: MESSAGE_UTILS is not defined","timestamp":"22/01/2023 11:35:33"}
