@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import yargs from "yargs/yargs"
 dotenv.config();
 
+console.log(process.env)
+
 const args = yargs(process.argv.slice(2)).default({mode:"FORK"}).alias({m:"mode"}).argv;
 
 const PRODUCTS_FILENAME = "productos";

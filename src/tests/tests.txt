@@ -2,7 +2,7 @@
 
 SUCCESS PATH NEW USER
 
-1. Registrar un usuario -> OK
+1. Registrar un usuario -> OK -> Mocha
 2. Crear un carrito -> Ok
 3. Chequear todos los productos -> Ok 
 4. Agregar un producto al carrito -> Ok

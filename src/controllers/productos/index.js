@@ -58,7 +58,7 @@ async function save(req,res){
         
     
       } catch (error) {
-        await LOGGER_UTILS.addLog(error);
+        await LOGGER_UTILS.error_log(error);
         res.send(error);
       }
 }

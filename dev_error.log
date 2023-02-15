@@ -7,3 +7,20 @@
 {"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:05:57"}
 {"level":"error","message":"Route: UserCart || Method: GetUserCart || Error: TypeError: Cannot read properties of null (reading 'carrito')","timestamp":"21/01/2023 14:06:23"}
 {"level":"error","message":"Route: Register User || Method: Send email || Error: ReferenceError: MESSAGE_UTILS is not defined","timestamp":"22/01/2023 11:35:33"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"telefono\" is required","timestamp":"13/02/2023 22:19:28"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"direccion\" is required","timestamp":"13/02/2023 22:20:38"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"nacimiento\" is required","timestamp":"13/02/2023 22:20:50"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"nacimiento\" must be a valid date","timestamp":"13/02/2023 22:21:18"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"nacimiento\" must be a valid date","timestamp":"13/02/2023 22:22:12"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"nacimiento\" is required","timestamp":"13/02/2023 22:23:10"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ReferenceError: carrito_id is not defined","timestamp":"13/02/2023 22:23:38"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ReferenceError: carrito_id is not defined","timestamp":"13/02/2023 22:26:06"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: nacimiento: Cast to date failed for value \"14/02/1991\" (type string) at path \"nacimiento\"","timestamp":"13/02/2023 22:27:43"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"telefono\" length must be less than or equal to 12 characters long","timestamp":"15/02/2023 14:29:33"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"K_VLKbWcTvPcoBl\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 14:54:32"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"d2I79qpD_9qB75a\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 14:54:49"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"6gIRj_4mSy97sDt\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:14:18"}
+{"level":"error","message":"Route: ValidationError: \"description\" length must be less than or equal to 100 characters long || Method: undefined || Error: undefined","timestamp":"15/02/2023 15:31:25"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"_ePyTyq7VSO96lk\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:33:32"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"mam_OY5P8J_v6B6\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:35:50"}
+{"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"e_PqhYCUcLh3jTE\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:42:00"}

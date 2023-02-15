@@ -113,8 +113,9 @@ async function save(req,res){
             timestamp: DATE_UTILS.getTimestamp(),
           })
           user.password = BCRYPT_UTILS.createHash(user.password)
+          user.nacimiento = nacimiento
           // create carrito
-          carrito_id = await CarritoController.create_carrito()
+          const carrito_id = await CarritoController.create_carrito()
           user.carrito = carrito_id
           // save user
           const createdUser = await UsuariosDao.save(user);
