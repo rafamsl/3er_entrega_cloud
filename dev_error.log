@@ -24,3 +24,4 @@
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"_ePyTyq7VSO96lk\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:33:32"}
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"mam_OY5P8J_v6B6\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:35:50"}
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"e_PqhYCUcLh3jTE\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:42:00"}
+{"level":"error","message":"Route: ValidationError: \"description\" is required || Method: undefined || Error: undefined","timestamp":"15/02/2023 23:48:24"}

@@ -1,0 +1,86 @@
+openapi: 3.0.0
+
+# Product
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - thumbnail
+        - timestamp
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the product.
+        title:
+          type: string
+          description: The title of the product.
+        description:
+          type: string
+          description: The description of the product.
+        code:
+          type: string
+          description: The code of the product.
+        price:
+          type: number
+          description: The price of the product.
+        stock:
+          type: number
+          description: The stock of the product.
+        thumbnail:
+          type: string
+          description: The URL of the product thumbnail.
+        timestamp:
+          type: string
+          description: When the product was created  
+      example:
+         id: 4ughd73658fnsk85dh58sk
+         title: Ergonómico Granito Pollo
+         price: 123.78
+         thumbnail: http://photo.url.png
+         code: Carne
+         stock: 29
+         timestamp: 15/02/2023 15:28:52
+  requestBodies:
+    NewProduct:
+      type: object
+      required:
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - thumbnail
+      properties:
+        title:
+          type: string
+          description: The title of the product.
+        description:
+          type: string
+          description: The description of the product.
+        code:
+          type: string
+          description: The code of the product.
+        price:
+          type: number
+          description: The price of the product.
+        stock:
+          type: number
+          description: The stock of the product.
+        thumbnail:
+          type: string
+          description: The URL of the product thumbnail.
+      example:
+        title: Ergonómico Granito Pollo
+        description: Pollo para comer
+        price: 123.78
+        thumbnail: http://photo.url.png
+        code: Carne
+        stock: 29
+

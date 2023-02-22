@@ -1,0 +1,41 @@
+openapi: 3.0.0
+
+# NewProduct
+components:
+  schemas:
+    NewProduct:
+      type: object
+      required:
+        - title
+        - description
+        - code
+        - price
+        - stock
+        - thumbnail
+      properties:
+        title:
+          type: string
+          description: The title of the product.
+        description:
+          type: string
+          description: The description of the product.
+        code:
+          type: string
+          description: The code of the product.
+        price:
+          type: number
+          description: The price of the product.
+        stock:
+          type: number
+          description: The stock of the product.
+        thumbnail:
+          type: string
+          description: The URL of the product thumbnail.
+      example:
+         title: Ergonómico Granito Pollo
+         description: Pollo para comer
+         price: 123.78
+         thumbnail: http://photo.url.png
+         code: Carne
+         stock: 29
+  

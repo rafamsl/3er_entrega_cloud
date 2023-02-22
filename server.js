@@ -12,8 +12,9 @@ import handlebars from "express-handlebars";
 import {PassportAuth} from "./src/middlewares/passport/index.js"
 import cluster from 'cluster';
 import { LOGGER_UTILS } from './src/utils/index.js';
-import path from 'path';
-import fs from 'fs';
+import swaggerUi from "swagger-ui-express"
+import swaggerJsdoc from "swagger-jsdoc"
+import GraphQLController from './src/controllers/graphQL/GraphQLController.js';
 
 
 
@@ -66,11 +67,17 @@ app.use("",LoginRouter)
 app.use("/api/random",ChildRouter)
 app.get('/docs', (req, res) => {
 	res.render("readme")})
+const specs = swaggerJsdoc(config.DOCS.SWAGGER.options)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs))
+app.use('/graphql', new GraphQLController());
 app.get('*', (req, res) => {
 	const { url, method } = req
 	LOGGER_UTILS.warn_log(req.url, method, "Pagina no existente")
 	res.send(`Ruta ${method} ${url} no está implementada`)
   }) 
+
+
+
 
 // WEBSOCKET
 

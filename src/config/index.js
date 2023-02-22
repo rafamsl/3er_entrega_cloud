@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import yargs from "yargs/yargs"
 dotenv.config();
 
-console.log(process.env)
 
 const args = yargs(process.argv.slice(2)).default({mode:"FORK"}).alias({m:"mode"}).argv;
 
@@ -53,6 +52,21 @@ const config = {
       accountSid: process.env.TWILIO_ACCOUNT,
       authToken: process.env.TWILIO_TOKEN,
       twilioPhone: '+13609384461'
+    }
+  },
+  DOCS:{
+    SWAGGER:{
+      options:{
+        definition: {
+          openapi: '3.0.0',
+          info: {
+          title: 'Express API with Swagger',
+          description:
+            'A webcommerce API application documented with Swagger',
+          },
+        },
+        apis: ['./docs/**/*.yaml'],
+        }
     }
   }
 };

@@ -38,3 +38,14 @@
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"_ePyTyq7VSO96lk\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:33:32"}
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"mam_OY5P8J_v6B6\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:35:50"}
 {"level":"error","message":"Route: Register User || Method: Save || Error: ValidationError: \"password\" with value \"e_PqhYCUcLh3jTE\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","timestamp":"15/02/2023 15:42:00"}
+{"level":"warn","message":"Route: /api/docs || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:09:51"}
+{"level":"warn","message":"Route: /apple-touch-icon-precomposed.png || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:09:51"}
+{"level":"warn","message":"Route: /apple-touch-icon.png || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:09:51"}
+{"level":"warn","message":"Route: /api/docs || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:10:15"}
+{"level":"warn","message":"Route: /api/docs || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:10:19"}
+{"level":"warn","message":"Route: /api-docs || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:11:08"}
+{"level":"warn","message":"Route: /api-docs || Method: GET || Warn: Pagina no existente","timestamp":"15/02/2023 23:11:20"}
+{"level":"error","message":"Route: ValidationError: \"description\" is required || Method: undefined || Error: undefined","timestamp":"15/02/2023 23:48:24"}
+{"level":"warn","message":"Route: /favicon.ico || Method: GET || Warn: Pagina no existente","timestamp":"22/02/2023 09:40:00"}
+{"level":"warn","message":"Route: /apple-touch-icon-precomposed.png || Method: GET || Warn: Pagina no existente","timestamp":"22/02/2023 09:40:00"}
+{"level":"warn","message":"Route: /apple-touch-icon.png || Method: GET || Warn: Pagina no existente","timestamp":"22/02/2023 09:40:00"}

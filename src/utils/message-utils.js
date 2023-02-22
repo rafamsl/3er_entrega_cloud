@@ -8,7 +8,6 @@ const twilioCredentials = {
     authToken: config.CREDENTIALS.TWILIO.authToken,
     twilioPhone: config.CREDENTIALS.TWILIO.twilioPhone
 }
-console.log(twilioCredentials.accountSid, twilioCredentials.authToken)
 const twilioClient = twilio(twilioCredentials.accountSid, twilioCredentials.authToken);
 
 

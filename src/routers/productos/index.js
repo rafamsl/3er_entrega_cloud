@@ -4,7 +4,7 @@ import { ProductController } from "../../controllers/productos/index.js";
 
 const router = Router();
 
-// /api/products
+// /api/productos
 router.get("", ProductController.getAll);
 
 router.get("/:id", ProductController.getById);
