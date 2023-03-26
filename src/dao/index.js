@@ -1,7 +1,7 @@
 import { config } from "../config/index.js"
 import { CarritosFS, CarritosMemoria, CarritosMongo } from "./carritos/index.js"
 import { ProductosFS, ProductosMemoria, ProductosMongo } from "./productos/index.js"
-import { OrdenesFS, OrdenesMemoria, OrdenesMongo } from "./ordenes/index.js"
+import { OrdenesMongo } from "./ordenes/index.js"
 import { UsuariosMongo } from "./usuarios/index.js"
 import { MongoDBService } from "../db/connections/mongoseconnection.js"
 import { MessagesMongo } from "./messages/index.js"
@@ -28,9 +28,7 @@ const getSelectedDaos = () => {
         CarritosDao: new CarritosFS(
           config.DATABASES.filesystem.CARTS_FILENAME
         ),
-        OrdenesDao: new OrdenesFS(
-          config.DATABASES.filesystem.ORDER_FILENAME
-        ),
+        OrdenesDao: new OrdenesMongo(),
         UsuariosDao: new UsuariosMongo(),
         MessagesDao: new MessagesMongo()
       };
@@ -39,7 +37,7 @@ const getSelectedDaos = () => {
       return {
         ProductosDao: new ProductosMemoria(),
         CarritosDao: new CarritosMemoria(),
-        OrdenesDao: new OrdenesMemoria(),
+        OrdenesDao: new OrdenesMongo(),
         UsuariosDao: new UsuariosMongo(),
         MessagesDao: new MessagesMongo()
       };
