@@ -1,8 +1,10 @@
 import { config } from "../config/index.js"
 import { CarritosFS, CarritosMemoria, CarritosMongo } from "./carritos/index.js"
 import { ProductosFS, ProductosMemoria, ProductosMongo } from "./productos/index.js"
+import { OrdenesFS, OrdenesMemoria, OrdenesMongo } from "./ordenes/index.js"
 import { UsuariosMongo } from "./usuarios/index.js"
 import { MongoDBService } from "../db/connections/mongoseconnection.js"
+import { MessagesMongo } from "./messages/index.js"
 
 
 
@@ -13,7 +15,9 @@ const getSelectedDaos = () => {
       return {
         ProductosDao: new ProductosMongo(),
         CarritosDao: new CarritosMongo(),
-        UsuariosDao: new UsuariosMongo()
+        UsuariosDao: new UsuariosMongo(),
+        OrdenesDao: new OrdenesMongo(),
+        MessagesDao: new MessagesMongo()
       };
     }
     case "fs": {
@@ -24,22 +28,28 @@ const getSelectedDaos = () => {
         CarritosDao: new CarritosFS(
           config.DATABASES.filesystem.CARTS_FILENAME
         ),
-        UsuariosDao: new UsuariosMongo()
+        OrdenesDao: new OrdenesFS(
+          config.DATABASES.filesystem.ORDER_FILENAME
+        ),
+        UsuariosDao: new UsuariosMongo(),
+        MessagesDao: new MessagesMongo()
       };
     }
     case "memory": {
       return {
         ProductosDao: new ProductosMemoria(),
         CarritosDao: new CarritosMemoria(),
-        UsuariosDao: new UsuariosMongo()
+        OrdenesDao: new OrdenesMemoria(),
+        UsuariosDao: new UsuariosMongo(),
+        MessagesDao: new MessagesMongo()
       };
     }
   }
 };
 
 const selectedDaos = getSelectedDaos()
-const { ProductosDao, CarritosDao, UsuariosDao } = selectedDaos;
-export { ProductosDao, CarritosDao,UsuariosDao }
+const { ProductosDao, CarritosDao, UsuariosDao, OrdenesDao, MessagesDao } = selectedDaos;
+export { ProductosDao, CarritosDao,UsuariosDao, OrdenesDao, MessagesDao }
 
 
 

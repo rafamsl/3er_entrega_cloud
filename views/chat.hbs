@@ -1,0 +1,55 @@
+<head>
+    <title>Sala de Chat!</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <h3>¡Sala de Chat! </h3>
+
+    <form onsubmit="return enviarMensaje()">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="mensaje" placeholder="Mensaje">
+        <input type="submit" value="Enviar">
+    </form>
+    <hr>
+    <div id="listaMensajes" class="messages-list_container">
+
+    </div>
+    <div class="text-left">
+      <button class="btn btn-info my-3" onclick="location.href = '/home'">Home</button>
+    </div>
+
+    <script>
+        const socket = io.connect();
+
+        function enviarMensaje() {
+        const email = document.getElementById("email");
+        const mensaje = document.getElementById("mensaje");
+
+        if (!email.value || !mensaje.value) {
+            alert("Debe completar los campos");
+            return false;
+        }
+
+        socket.emit("mensajeNuevo", { author: email.value, text: mensaje.value });
+        mensaje.value = "";
+        return false;
+        }
+
+        socket.on("mensajes", (mensajes) => {
+        console.log("socket in mensajes")
+        let mensajesHtml = mensajes
+            .map(
+            (mensaje) =>
+                `<span>${mensaje.timestamp}<b> ${mensaje.author}: </b>${mensaje.text}</span>`
+            )
+            .join("<br>");
+
+        document.getElementById("listaMensajes").innerHTML = mensajesHtml;
+        });
+
+    </script>
+</body>
+
+</html>

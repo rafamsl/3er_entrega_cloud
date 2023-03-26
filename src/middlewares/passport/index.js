@@ -22,10 +22,7 @@ const init = () => {
         "login",
         new LocalStrategy({ usernameField: 'email', passwordField: 'password', passReqToCallback: true }, login)
     );
-    // passport.use(
-    //     "register",
-    //     new LocalStrategy({ usernameField: 'email', passwordField: 'password', passReqToCallback: true }, register)
-    // );
+    
     passport.use(
         "github",
         new GithubStrategy({
@@ -68,39 +65,6 @@ const github_login = async function(accessToken, refreshToken, profile, done){
         done(error)
     }
 }
-
-// const register = async function(req,res,done){
-//     try {
-//         console.log("agregando usuario")
-//         const { email, password } = req.body;
-//         let user = await UsuariosDao.getOne({email:email})
-    
-//         if (user){
-//             return done(null, false, { error: ERRORS_UTILS.MESSAGES.EXISTING_USER})
-//         }
-
-//         user = await JOI_VALIDATOR.user.validateAsync({
-//         email,
-//         password,
-//         timestamp: DATE_UTILS.getTimestamp(),
-//         })
-//         user.password = BCRYPT_UTILS.createHash(user.password)
-//         const createdUser = await UsuariosDao.save(user);
-
-//         const userResponse = {
-//             id: createdUser.id,
-//             email: createdUser.email,
-//             carrito: createdUser.carrito
-//         }
-
-//         return done(null, userResponse);
-    
-//     } catch (error) {
-//         await LOGGER_UTILS.addLog(error);
-//         return done(null, false, error)
-//     }
-// }
-
 
 
 const login = async function (req,email,password,done){

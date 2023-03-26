@@ -6,6 +6,7 @@ import {
   LOGGER_UTILS,
   MESSAGE_UTILS,
 } from "../../utils/index.js";
+import { OrderController } from "../ordenes/index.js";
 import { UsuarioController } from "../usuarios/index.js";
 
 async function getAll(req,res){
@@ -215,10 +216,15 @@ async function buy(req,res){
   const carrito = await CarritosDao.getById(user.carrito);
   await CarritosDao.deleteById(carrito.id);
 
+  // Crear orden
+  await OrderController.create_order(carrito.productos, user)
+
   // Actualizar usuario 
   const newCartId = await create_carrito()
   UsuarioController.addCartToUser(req,newCartId)
   res.send({succes:true})
+
+  
 
   // enviar mensaje al user
   const smsBuy = {

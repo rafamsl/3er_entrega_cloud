@@ -24,9 +24,8 @@
               <td>{{this.title}}</td>
               <td>${{this.price}}</td>
               <td><img width="48" src={{this.thumbnail}} alt="image"></td>
-              <td>{{this._id}}</td>
-
-              
+              <td><button class="btn btn-info my-3" onclick="location.href = '/producto/{{this._id}}'">View</button></td>
+              <td><button class="btn btn-info my-3" onclick="location.href = '/add_producto/{{this._id}}'">Add to Cart</button></td>
           </tr>
           {{/each}}
       </table>
@@ -51,17 +50,22 @@
             <td>{{this.title}}</td>
             <td>${{this.price}}</td>
             <td><img width="48" src={{this.thumbnail}} alt="image"></td>
-            <td>{{this.stock}}</td>   
+            <td>{{this.stock}}</td>
+            <td><button class="btn btn-danger my-3" onclick="location.href = '/remove_producto/{{this._id}}'">Borrar</button></td>   
           </tr>
           {{/each}}
       </table>
+      <td><button class="btn btn-success my-3" onclick="location.href = '/comprar'">Comprar</button></td>   
     {{else}}
       <div>
           No hay productos
       </div>
     {{/if}}
     <hr>
-    <h3>Instrucciones para comprar</h3>
+    <h3>Chat - Soporte</h3>
+      <button class="btn btn-success my-3" onclick="location.href = '/chat'">Chat</button>
+    <hr>
+    <h3>Instrucciones para comprar por API</h3>
     <div>
       <div>
         <h5>Get Auth token: </h5>

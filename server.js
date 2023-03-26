@@ -3,7 +3,6 @@ import {config} from './src/config/index.js';
 import { CarritoRouter, ProductoRouter, LoginRouter, AuthRouter, ChildRouter, UsuarioRouter } from './src/routers/index.js';
 import { Server as HttpServer } from "http";
 import { Server as IOServer } from "socket.io";
-import { ALL_HANDLERS } from "./src/handlers/index.js"
 import session from 'express-session';
 import MongoStore from 'connect-mongo'
 import passport from "passport"
@@ -11,11 +10,12 @@ import flash from "connect-flash"
 import handlebars from "express-handlebars";
 import {PassportAuth} from "./src/middlewares/passport/index.js"
 import cluster from 'cluster';
-import { LOGGER_UTILS } from './src/utils/index.js';
+import { LOGGER_UTILS, DATE_UTILS } from './src/utils/index.js';
 import swaggerUi from "swagger-ui-express"
 import swaggerJsdoc from "swagger-jsdoc"
 import GraphQLController from './src/controllers/graphQL/GraphQLController.js';
-
+import { MessageController } from './src/controllers/index.js';
+import { MessagesDao } from './src/dao/index.js';
 
 
 
@@ -81,15 +81,19 @@ app.get('*', (req, res) => {
 
 // WEBSOCKET
 
-io.on('connection', clienteNuevo => {
-	// Agrego al usuario conectado
-	ALL_HANDLERS.userConnected(clienteNuevo, io)
-	
-	clienteNuevo.on('new product', newProd => {
-		ALL_HANDLERS.newProduct(clienteNuevo, io, newProd)
-	})
-
-});
+io.on("connection", async (socket) => {
+	console.log("new connection")
+	socket.emit("mensajes", await MessageController.getAll());
+  
+	socket.on("mensajeNuevo", async ({ author, text }) => {
+		console.log("mensaje nuevo")
+		const message = { author, text, timestamp: DATE_UTILS.getTimestamp()};
+		await MessageController.saveMsg(message)
+  
+	  io.sockets.emit("mensajes", await MessageController.getAll());
+	});
+  
+  });
 
 // SERVER
 if(config.SERVER.MODE == "CLUSTER"){

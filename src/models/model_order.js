@@ -1,23 +1,25 @@
 import { Schema } from "mongoose";
 
-const CartCollection = "carritos";
+const OrderCollection = "ordenes";
 
-const CartSchema = new Schema(
+const OrderSchema = new Schema(
   {
     timestamp: { type: String, required: true, max: 100 },
+    usuario: { type: Schema.Types.ObjectId, ref: "usuarios" },
     productos: [{product_id: { type: Schema.Types.ObjectId, ref: "productos" }, stock: {type: Number}}]
   },
   {
     virtuals: true,
   }
-);
+);  
 
-CartSchema.set("toJSON", {
+OrderSchema.set("toJSON", {
   transform: (_, response) => {
     response.id = response._id;
+    delete response.__v;
     delete response._id;
     return response;
   },
 });
 
-export const CartModel = { CartCollection, CartSchema };
+export const OrderModel = { OrderCollection, OrderSchema };

@@ -7,6 +7,7 @@ const args = yargs(process.argv.slice(2)).default({mode:"FORK"}).alias({m:"mode"
 
 const PRODUCTS_FILENAME = "productos";
 const CARTS_FILENAME = "carritos";
+const ORDER_FILENAME = "ordenes";
 const config = {
   SERVER: {
     PORT: process.env.PORT,
@@ -21,6 +22,7 @@ const config = {
     firebase: {
       PRODUCTS_FILENAME,
       CARTS_FILENAME,
+      ORDER_FILENAME
     },
     mongo: {
       url:process.env.MONGO_URL

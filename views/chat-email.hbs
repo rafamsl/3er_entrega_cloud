@@ -1,0 +1,33 @@
+<head>
+    <title>Sala de Chat!</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <h3>¡Sala de Chat! </h3>
+
+    <div id="listaMensajes" class="messages-list_container">
+
+    </div>
+    <div class="text-left">
+      <button class="btn btn-info my-3" onclick="location.href = '/home'">Home</button>
+    </div>
+
+    <script>
+        const socket = io.connect();
+
+        socket.on("mensajes", (mensajes) => {
+            const authorEmail = window.location.pathname.split("/")[2]; // get the author email from the URL
+            let mensajesHtml = mensajes
+                .filter(mensaje => mensaje.author === authorEmail) // filter messages by author email
+                .map((mensaje) => `<span>${mensaje.timestamp}<b> ${mensaje.author}: </b>${mensaje.text}</span>`)
+                .join("<br>");
+
+            document.getElementById("listaMensajes").innerHTML = mensajesHtml;
+        });
+
+    </script>
+</body>
+
+</html>

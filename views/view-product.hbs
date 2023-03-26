@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <div class="jumbotron">
+    {{#if product.title}}
+      <h1>{{ product.title }}</h1>
+      <br>
+      <div class="form-group">
+        <label for="description">Descripción:</label>
+        <p id="description">{{ product.description }}</p>
+      </div>
+      <div class="form-group">
+        <label for="code">Código:</label>
+        <p id="code">{{ product.code }}</p>
+      </div>
+      <div class="form-group">
+        <label for="thumbnail">Imagen:</label>
+        <img src="{{ product.thumbnail }}" alt="{{ product.title }} thumbnail">
+      </div>
+      <div class="form-group">
+        <label for="price">Precio:</label>
+        <p id="price">{{ product.price }}</p>
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock:</label>
+        <p id="stock">{{ product.stock }}</p>
+      </div>
+      <div class="form-group">
+        <label for="stock">ID:</label>
+        <p id="stock">{{ product._id }}</p>
+      </div>
+    {{else}}
+    <p>Producto no encontrado</p>
+    {{/if}}
+
+    
+    <hr>
+    
+    <div class="text-left">
+      <button class="btn btn-info my-3" onclick="location.href = '/home'">Home</button>
+    </div>
+  </div>
+</div>

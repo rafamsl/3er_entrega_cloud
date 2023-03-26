@@ -3,6 +3,7 @@ import { BCRYPT_UTILS, DATE_UTILS, ERRORS_UTILS, JOI_VALIDATOR, LOGGER_UTILS, ME
 import { ProductController } from "../productos/index.js"; 
 import {config} from "../../config/index.js"
 import { CarritoController } from "../carritos/index.js";
+import Chat from "twilio/lib/rest/Chat.js";
 
 
 async function getAllProducts(){
@@ -50,15 +51,45 @@ async function view_new_product(req,res){
   LOGGER_UTILS.info_log(req.originalUrl, "view_new_product")
   res.render("new-product")
 }
+
+async function view_product(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "view_product") 
+  const productId = req.params.productId
+  const product = await ProductosDao.getById(productId)
+  res.render('view-product', {"product" : product})
+}
+
+async function add_to_cart(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "add_to_cart")
+  const productId = req.params.productId
+  req.body = {"productId" : productId, "stockRequest" : 1}
+  await CarritoController.addToCart(req,res)
+}
+async function remove_from_cart(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "remove_from_cart")
+  await CarritoController.removeFromCart(req,res)
+}
+async function buy(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "remove_from_cart")
+  await CarritoController.buy(req,res)
+}
 async function new_product(req,res){
   try {
     LOGGER_UTILS.info_log(req.originalUrl, "new_product")
     await ProductController.save(req,res)  
-    res.render("home");
   } catch (error) {
     LOGGER_UTILS.error_log(req.originalUrl, "new_product", error)
     res.send({error:error})
   }
+}
+
+async function chat(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "chat")
+  res.render("chat")
+}
+async function chat_email(req,res){
+  LOGGER_UTILS.info_log(req.originalUrl, "chat_email")
+  res.render("chat-email")
 }
 
 async function logout(req, res) {
@@ -122,4 +153,4 @@ async function register(req,res){
 }
 
 
-export const LoginController = {viewLogin, viewRegister, home, logout, failureLogin, failureRegister, register, view_new_product, new_product, info}
+export const LoginController = {viewLogin, viewRegister, home, logout, failureLogin, failureRegister, register, view_new_product, new_product, info, view_product,add_to_cart,remove_from_cart, buy, chat, chat_email}
