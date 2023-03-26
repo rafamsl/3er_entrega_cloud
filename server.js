@@ -13,9 +13,7 @@ import cluster from 'cluster';
 import { LOGGER_UTILS, DATE_UTILS } from './src/utils/index.js';
 import swaggerUi from "swagger-ui-express"
 import swaggerJsdoc from "swagger-jsdoc"
-import GraphQLController from './src/controllers/graphQL/GraphQLController.js';
 import { MessageController } from './src/controllers/index.js';
-import { MessagesDao } from './src/dao/index.js';
 
 
 
@@ -69,7 +67,6 @@ app.get('/docs', (req, res) => {
 	res.render("readme")})
 const specs = swaggerJsdoc(config.DOCS.SWAGGER.options)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs))
-app.use('/graphql', new GraphQLController());
 app.get('*', (req, res) => {
 	const { url, method } = req
 	LOGGER_UTILS.warn_log(req.url, method, "Pagina no existente")
