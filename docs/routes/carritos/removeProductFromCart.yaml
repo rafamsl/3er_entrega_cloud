@@ -1,0 +1,15 @@
+paths:
+  /api/carritos/usercart/productos/{productId}:
+    delete:
+      summary: Removes product from cart
+      tags:
+        - Carritos
+      parameters:
+      - name: productId
+        in: path
+        description: product ID
+        required: true
+        type: string
+      responses:
+        "200":
+          description: success

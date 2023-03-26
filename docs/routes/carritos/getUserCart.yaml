@@ -1,0 +1,21 @@
+paths:
+  /api/carritos/usercart:
+    get:
+      summary: Get current user cart
+      tags:
+        - Carritos
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: El carrito.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

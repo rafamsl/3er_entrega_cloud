@@ -1,0 +1,13 @@
+paths:
+  /api/carritos/:
+    get:
+      summary: Gets all carritos
+      tags:
+        - Carritos
+      responses:
+        "200":
+          description: All carritos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'

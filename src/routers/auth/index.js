@@ -6,7 +6,7 @@ const router = Router()
 
 router.post("/register", UsuarioController.save)
 router.post("/login", passport.authenticate("login"),UsuarioController.postLogin)
-router.get("/login", UsuarioController.getLogin)
+router.post("/loginToken", UsuarioController.getLogin)
 router.get("/loginGithub", passport.authenticate("github"), async (req,res) =>{
     const user = req.user
     res.send({success: true, message: `logged as ${user}`})

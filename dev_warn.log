@@ -64,3 +64,5 @@
 {"level":"warn","message":"Route: /public/js/index.js || Method: GET || Warn: Pagina no existente","timestamp":"25/03/2023 18:49:41"}
 {"level":"warn","message":"Route: /public/js/index.js || Method: GET || Warn: Pagina no existente","timestamp":"25/03/2023 18:50:38"}
 {"level":"warn","message":"Route: /public/js/index.js || Method: GET || Warn: Pagina no existente","timestamp":"25/03/2023 19:01:49"}
+{"level":"warn","message":"Route: /api/usercart || Method: GET || Warn: Pagina no existente","timestamp":"26/03/2023 14:26:44"}
+{"level":"warn","message":"Route: /api/procarritosductos/usercart || Method: GET || Warn: Pagina no existente","timestamp":"26/03/2023 14:29:34"}

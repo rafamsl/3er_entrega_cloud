@@ -1,0 +1,92 @@
+openapi: 3.0.0
+
+# User
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - password
+        - telefono
+        - direccion
+        - nacimiento
+        - avatar
+        - carrito
+        - timestamp
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the user.
+        email:
+          type: string
+          description: email
+        password:
+          type: string
+          description: password
+        telefono:
+          type: string
+          description: telefono
+        direccion:
+          type: number
+          description: direccion
+        nacimiento:
+          type: string
+          description: fecha de nacimiento
+        avatar:
+          type: string
+          description: imagen del user
+        carrito:
+          type: string
+          description: id del carrito
+        timestamp:
+          type: string
+          description: When the product was created  
+      example:
+         id: 4ughd73658fnsk85dh58sk
+         email: rafael.msl81@gmail.com
+         password: 4ughd73658fnsk85dh58sk
+         telefono: 616867680
+         direccion: Carrer Torre dels Pardals
+         nacimiento: 14/02/1991
+         avatar: http://photo.url.png
+         carrito: 4ughd73658fnsk85dh58sk
+         timestamp: 15/02/2023 15:28:52
+  requestBodies:
+    NewUser:
+      type: object
+      required:
+        - email
+        - password
+        - telefono
+        - direccion
+        - nacimiento
+        - avatar
+      properties:
+        email:
+          type: string
+          description: email
+        password:
+          type: string
+          description: password
+        telefono:
+          type: string
+          description: telefono
+        direccion:
+          type: number
+          description: direccion
+        nacimiento:
+          type: string
+          description: fecha de nacimiento
+        avatar:
+          type: string
+          description: imagen del user
+      example:
+         email: rafael.msl81@gmail.com
+         password: 4ughd73658fnsk85dh58sk
+         telefono: 616867680
+         direccion: Carrer Torre dels Pardals
+         nacimiento: 14/02/1991
+         avatar: http://photo.url.png
+

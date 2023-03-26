@@ -1,0 +1,40 @@
+openapi: 3.0.0
+
+# User
+components:
+  schemas:
+    NewUser:
+      type: object
+      required:
+        - email
+        - password
+        - telefono
+        - direccion
+        - nacimiento
+        - avatar
+      properties:
+        email:
+          type: string
+          description: email
+        password:
+          type: string
+          description: password
+        telefono:
+          type: string
+          description: telefono
+        direccion:
+          type: number
+          description: direccion
+        nacimiento:
+          type: string
+          description: fecha de nacimiento
+        avatar:
+          type: string
+          description: imagen del user 
+      example:
+         email: rafael.msl81@gmail.com
+         password: 4ughd73658fnsk85dh58sk
+         telefono: 616867680
+         direccion: Carrer Torre dels Pardals
+         nacimiento: 14/02/1991
+         avatar: http://photo.url.png

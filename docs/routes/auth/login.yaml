@@ -1,0 +1,26 @@
+paths:
+  /api/auth/loginToken:
+    post:
+      summary: Login and gets access token
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: The user and access token
+          content:
+            application/json:
+              schema:
+                example:
+                  user: [User properties]
+                  accessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9

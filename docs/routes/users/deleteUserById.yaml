@@ -1,0 +1,16 @@
+paths:
+  /api/usuarios/{id}:
+    delete:
+      summary: Deletes the user with given id
+      tags:
+        - Users
+      parameters:
+      - name: id
+        in: path
+        description: path parameter takes the user id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: No additional info attached
+

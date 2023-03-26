@@ -1,0 +1,32 @@
+paths:
+  /api/carritos/usercart/productos:
+    post:
+      summary: Add productos to cart
+      tags:
+        - Carritos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                stockRequest:
+                  type: integer
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: El carrito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Carrito'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

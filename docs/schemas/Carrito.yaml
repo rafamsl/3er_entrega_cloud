@@ -1,0 +1,36 @@
+openapi: 3.0.0
+
+# Carrito
+components:
+  schemas:
+    Carrito:
+      type: object
+      required:
+        - id
+        - productos
+        - timestamp
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the carrito.
+        productos:
+          type: array
+          items:
+            type: object
+            properties:
+              product_id:
+                type: string
+                description: product id
+              stock:
+                type: integer
+                description: amount
+              _id:
+                type: string
+                description: cart item id
+        timestamp:
+          type: string
+          description: When the product was created  
+      example:
+         id: 4ughd73658fnsk85dh58sk
+         productos: [product_id : 12345, stock : 1, _id : 12345]
+         timestamp: 15/02/2023 15:28:52

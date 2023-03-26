@@ -1,3 +1,9 @@
-tags:
-  name: Productos
+# tags.yaml
+- name: Productos
   description: API to manage your products.
+- name: Users
+  description: API to manage users.
+- name: Carritos
+  description: API to manage carritos.
+- name: Auth
+  description: Login and get token

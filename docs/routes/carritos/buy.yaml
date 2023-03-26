@@ -1,0 +1,17 @@
+paths:
+  /api/carritos/usercart/buy:
+    post:
+      summary: finish order
+      tags:
+        - Carritos
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: success
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
